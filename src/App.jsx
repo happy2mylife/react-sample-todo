@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import axios from "axios";
 
 import { InputComponent } from "./components/InputComponent";
 
@@ -16,7 +17,14 @@ export const App = () => {
   const onClickAddTodo = () => {
     if (todoText.length === 0) return;
     setIncompleteTodos([...incompleteTodos, todoText]);
+    registerSpreadSheet(todoText);
     setTodoText("");
+  };
+
+  const registerSpreadSheet = async (todoText) => {
+    await axios.post(process.env.API_URL, {
+      message: "value1",
+    });
   };
 
   const onClickDeleteTodo = (index) => {
