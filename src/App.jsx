@@ -22,9 +22,12 @@ export const App = () => {
   };
 
   const registerSpreadSheet = async (todoText) => {
-    await axios.post(process.env.API_URL, {
-      message: "value1",
-    });
+    await axios.post(
+      "https://script.google.com/macros/s/AKfycbwD3_lPkEssjGjuk9-tHeOWTiLSaam29YsrkTRI8L1khF3MGNJBJ_Fg5KSRuNTBJujT/exec",
+      {
+        message: "value1",
+      }
+    );
   };
 
   const onClickDeleteTodo = (index) => {
